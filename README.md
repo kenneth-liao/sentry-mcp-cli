@@ -36,7 +36,7 @@ This CLI tool provides a token-efficient interface to Sentry's Model Context Pro
 
 ```bash
 # Install as a uv tool (global installation)
-uv tool install git+https://github.com/yourusername/sentry-mcp-cli
+uv tool install git+https://github.com/kenneth-liao/sentry-mcp-cli
 
 # Verify installation
 sentry --help
@@ -47,7 +47,7 @@ sentry list-tools
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/sentry-mcp-cli
+git clone https://github.com/kenneth-liao/sentry-mcp-cli
 cd sentry-mcp-cli
 
 # Install dependencies with uv
@@ -154,9 +154,9 @@ sentry create-dsn <name> [--project TEXT] [--json]
 sentry find-dsns [--project TEXT] [--json]
 
 # Meta Commands (Progressive Disclosure)
-sentry list-tools [--json]
-sentry describe-tool <tool-name> [--json]     # Coming soon
-sentry tool-schema <tool-name>                # Coming soon
+sentry list-tools [--json]                    # Tier 1: Discovery (~100 tokens)
+sentry describe-tool <tool-name> [--json]     # Tier 2: Details (~200 tokens)
+sentry tool-schema <tool-name>                # Tier 3: Full schema (~500 tokens)
 ```
 
 ### Global Flags
@@ -299,10 +299,10 @@ uv run pytest
 - [x] Main Typer app with global flags
 - [x] `list-tools` command
 
-**Phase 2: Meta Commands** 📋 Next
-- [ ] `describe-tool` command
-- [ ] `tool-schema` command
-- [ ] Output formatters (table, compact)
+**Phase 2: Meta Commands** ✅ Complete
+- [x] `describe-tool` command - Detailed tool documentation (Tier 2)
+- [x] `tool-schema` command - Full JSON schema (Tier 3)
+- [x] Output formatters (JSON, table, human-readable)
 
 **Phase 3-6: All Tools** 📋 Planned
 - [ ] Inspection tools (find-*, get-*, whoami)
@@ -359,6 +359,6 @@ Contributions welcome! Please open an issue or submit a pull request.
 ## Support
 
 For issues and questions:
-- Open an issue on [GitHub](https://github.com/yourusername/sentry-mcp-cli/issues)
+- Open an issue on [GitHub](https://github.com/kenneth-liao/sentry-mcp-cli/issues)
 - Check the [Sentry MCP documentation](https://mcp.sentry.dev)
 - Review the [MCP specification](https://modelcontextprotocol.io/docs)

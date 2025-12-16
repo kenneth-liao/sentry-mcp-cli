@@ -10,4 +10,4 @@ wheels/
 .venv
 
 # secrets
-.env
+.env.claude/
